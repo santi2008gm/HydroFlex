@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Contacto — HydroFlex</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="header">
+  <div class="container header-inner">
+    <a class="brand" href="index.html">
+      <div class="logo"><img src="img/logo.svg" alt="HydroFlex logo" width="28"></div>
+      <div><strong>HydroFlex</strong><div class="small">Hidratación inteligente</div></div>
+    </a>
+    <nav class="nav" aria-label="principal">
+      <a href="hydroflex.html">Producto</a>
+      <a href="tecnologia.html">Tecnología</a>
+      <a href="sustentabilidad.html">Sustentabilidad</a>
+      <a href="contacto.html">Contacto</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <section class="hero">
+    <div class="left">
+      <h1 class="h1">Contactá a HydroFlex</h1>
+      <p class="lead">¿Preguntas sobre el producto, disponibilidad o distribución? Escribinos y te respondemos.</p>
+
+      <div class="section">
+        <h3>Formulario de contacto</h3>
+        <form action="https://formspree.io/f/{FORM_ID}" method="POST">
+          <div class="form-row">
+            <div>
+              <label for="name">Nombre</label>
+              <input id="name" name="name" required placeholder="Tu nombre">
+            </div>
+            <div>
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" required placeholder="tu@email.com">
+            </div>
+          </div>
+
+          <label for="asunto">Asunto</label>
+          <input id="asunto" name="asunto" placeholder="Ej: Ficha técnica, distribución, consulta">
+
+          <label for="message">Mensaje</label>
+          <textarea id="message" name="message" rows="5" required placeholder="Cuéntanos qué necesitas..."></textarea>
+
+          <div style="margin-top:12px;display:flex;gap:10px">
+            <button class="btn" type="submit">Enviar mensaje</button>
+            <a class="btn ghost" href="index.html">Volver</a>
+          </div>
+        </form>
+      </div>
+
+      <div class="section">
+        <h3>Preguntas frecuentes</h3>
+        <div class="accordion">
+          <div class="accordion-item">
+            <div class="accordion-header">¿Dónde puedo comprar HydroFlex?</div>
+            <div class="accordion-body">HydroFlex está disponible a través de distribuidores autorizados. Contactanos para saber dónde comprar en tu zona.</div>
+          </div>
+          <div class="accordion-item">
+            <div class="accordion-header">¿Cuáles son las especificaciones técnicas?</div>
+            <div class="accordion-body">Podemos enviarte la ficha técnica completa con todas las especificaciones, certificaciones y detalles de materiales.</div>
+          </div>
+          <div class="accordion-item">
+            <div class="accordion-header">¿Ofrecen garantía?</div>
+            <div class="accordion-body">Sí, HydroFlex incluye garantía por defectos de fabricación. Consultanos por los términos específicos.</div>
+          </div>
+          <div class="accordion-item">
+            <div class="accordion-header">¿Hacen envíos internacionales?</div>
+            <div class="accordion-body">Sí, realizamos envíos internacionales. Contactanos para consultar costos y tiempos de entrega.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <aside class="right">
+      <div class="card">
+        <h4>Información de contacto</h4>
+        <p class="small"><strong>Email</strong><br>santi2008guerra@gmail.com</p>
+        <p class="small"><strong>Teléfono</strong><br>+54 9 (tu número)</p>
+        <p class="small"><strong>Ubicación</strong><br>Ciudad, País</p>
+        <p class="small" style="margin-top:12px;border-top:1px solid rgba(2,6,23,0.06);padding-top:12px"><strong>Tiempo de respuesta</strong><br>Respondemos en 24-48 horas hábiles.</p>
+      </div>
+    </aside>
+  </section>
+
+  <footer class="footer">
+    <div>© 2025 HydroFlex</div>
+    <div class="small">Sitio informativo — no es una tienda</div>
+  </footer>
+</main>
+<script src="script.js"></script>
+</body>
+</html>

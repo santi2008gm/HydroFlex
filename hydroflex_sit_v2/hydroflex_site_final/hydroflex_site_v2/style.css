@@ -1,0 +1,82 @@
+
+
+:root{
+  --bg:#f6fbff;
+  --card:#ffffff;
+  --accent:#0ea5a4;
+  --accent-2:#2563eb;
+  --muted:#6b7280;
+  --radius:14px;
+  --fw: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family:var(--fw);
+  background: linear-gradient(180deg,#e8f7ff 0%, #f6fbff 100%);
+  color:#05232b;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  line-height:1.45;
+}
+.container{max-width:1100px;margin:36px auto;padding:28px;background:var(--card);border-radius:16px;box-shadow:0 10px 30px rgba(2,6,23,0.06)}
+.header{
+  position:sticky;
+  top:0;
+  background:rgba(255,255,255,0.98);
+  backdrop-filter: blur(6px);
+  z-index:1000;
+  border-bottom:1px solid rgba(2,6,23,0.04);
+}
+.header-inner{display:flex;align-items:center;justify-content:space-between;gap:12px;max-width:1100px;margin:0 auto;padding:20px 28px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:inherit}
+.logo{width:48px;height:48px;border-radius:10px;display:grid;place-items:center;background:linear-gradient(135deg,var(--accent),var(--accent-2));color:white;font-weight:800}
+.nav{display:flex;gap:14px;align-items:center}
+.nav a{color:#0f1724;text-decoration:none;padding:10px 12px;border-radius:8px;font-weight:600}
+.nav a:hover{background:rgba(37,99,235,0.08)}
+.hero{display:flex;gap:24px;align-items:center;margin-top:16px}
+.hero .left{flex:1}
+.h1{font-size:28px;margin:0 0 10px;line-height:1.2}
+.lead{color:var(--muted);margin:0 0 18px}
+.cta{display:flex;gap:12px;flex-wrap:wrap}
+.btn{padding:12px 16px;border-radius:10px;border:0;cursor:pointer;font-weight:700;background:linear-gradient(90deg,var(--accent),var(--accent-2));color:white;text-decoration:none}
+.btn.ghost{background:transparent;color:var(--accent-2);border:2px solid rgba(37,99,235,0.08)}
+.right{width:320px;display:grid;place-items:center}
+.card{background:linear-gradient(180deg,rgba(2,6,23,0.02),transparent);padding:18px;border-radius:12px}
+.section{margin-top:18px}
+.grid-two{display:grid;grid-template-columns:1fr 320px;gap:18px}
+@media (max-width:900px){.grid-two{grid-template-columns:1fr}.right{display:none}}
+.features{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:12px}
+.feature{background:rgba(2,6,23,0.02);padding:12px;border-radius:10px}
+.feature h4{margin:8px 0 4px}
+.testimonials{position:relative;width:100%;min-height:120px}
+.testimonial{position:absolute;left:0;top:0;width:100%;opacity:0;pointer-events:none;transition:opacity .35s ease; padding:18px;background:var(--card);box-shadow:0 8px 20px rgba(2,6,23,0.04);border:1px solid rgba(2,6,23,0.02);color:#05232b}
+.testimonial.active{position:relative;opacity:1;pointer-events:auto}
+.testimonial strong{display:block;font-size:16px;margin-bottom:6px;color:#05232b}
+.testimonial p.small{color:var(--muted);margin:0}
+.hero-img{max-width:360px;width:100%;height:auto;object-fit:cover;border-radius:12px;display:block}
+.aside-img{max-width:220px;width:100%;height:auto;object-fit:cover;border-radius:12px;display:block}
+/* Gallery in Producto page */
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:8px}
+.gallery img{width:100%;height:220px;object-fit:cover;border-radius:12px;display:block}
+.dots{display:flex;gap:8px;justify-content:center;margin-top:12px}
+.dot{width:10px;height:10px;border-radius:50%;background:rgba(2,6,23,0.08);cursor:pointer}
+.dot.active{background:var(--accent-2)}
+/* ensure testimonial names are visible */
+.testimonial strong{color:#05232b}
+.footer{display:flex;justify-content:space-between;align-items:center;margin-top:20px;color:var(--muted);font-size:14px}
+.small{font-size:13px;color:var(--muted)}
+form .row{display:flex;gap:8px;flex-wrap:wrap}
+input,textarea{width:100%;padding:10px;border-radius:8px;border:1px solid rgba(2,6,23,0.06);font-family:var(--fw);font-size:14px}
+input:focus,textarea:focus{outline:none;border-color:var(--accent);background:rgba(14,165,164,0.02)}
+label{display:block;font-size:13px;margin-bottom:6px;color:var(--muted);font-weight:600}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.logo-small{width:36px;height:36px;border-radius:8px;display:grid;place-items:center;background:linear-gradient(135deg,var(--accent),var(--accent-2));color:white;font-weight:700}
+.badge{display:inline-block;padding:6px 8px;background:rgba(14,165,164,0.12);color:var(--accent-2);border-radius:999px;font-weight:700;font-size:13px}
+.accordion{border-radius:8px;overflow:hidden}
+.accordion-item + .accordion-item{margin-top:8px}
+.accordion-header{background:rgba(2,6,23,0.02);padding:12px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-weight:600}
+.accordion-body{padding:12px;background:white;display:none;font-size:14px}
+.accordion-header:after{content:'▼';font-size:12px;transition:transform 0.3s}
+.accordion-body.open ~ .accordion-header:after{transform:rotate(180deg)}
