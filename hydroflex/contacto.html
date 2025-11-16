@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Contacto — HydroFlex</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="header">
+  <div class="container header-inner">
+    <a class="brand" href="index.html">
+      <div class="logo"><img src="img/logo.svg" alt="HydroFlex logo" width="28"></div>
+      <div><strong>HydroFlex</strong><div class="small">Hidratación inteligente</div></div>
+    </a>
+    <nav class="nav" aria-label="principal">
+      <a href="index.html">Inicio</a>
+      <a href="hydroflex.html">Producto</a>
+      <a href="tecnologia.html">Tecnología</a>
+      <a href="sustentabilidad.html">Sustentabilidad</a>
+      <a href="quienes-somos.html">Quiénes somos</a>
+      <a href="contacto.html">Contacto</a>
+      <a href="carrito.html" class="cart-link" aria-label="carrito">Carrito <span id="cart-count">0</span></a>
+    </nav>
+<button id="menu-toggle" aria-label="Abrir menú">☰</button>
+  </div>
+</header>
+
+<main class="container">
+  <section class="hero">
+    <div class="left">
+      <h1 class="h1">Contactá a HydroFlex</h1>
+      <p class="lead">¿Preguntas sobre el producto, disponibilidad o distribución? Escribinos y te respondemos.</p>
+
+      <div class="section">
+        <h3>Formulario de contacto</h3>
+        <form action="https://formspree.io/f/xdkynrbd" method="POST">
+          <div class="form-row">
+            <div>
+              <label for="name">Nombre</label>
+              <input id="name" name="name" required placeholder="Tu nombre">
+            </div>
+            <div>
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" required placeholder="tu@email.com">
+            </div>
+          </div>
+
+          <label for="asunto">Asunto</label>
+          <input id="asunto" name="asunto" placeholder="Ej: Ficha técnica, distribución, consulta">
+
+          <label for="message">Mensaje</label>
+          <textarea id="message" name="message" rows="5" required placeholder="Cuéntanos qué necesitas..."></textarea>
+
+          <div style="margin-top:12px;display:flex;gap:10px">
+            <button class="btn" type="submit">Enviar mensaje</button>
+            <a class="btn ghost" href="index.html">Volver</a>
+          </div>
+        </form>
+      </div>
+
+      <!-- Chat toggle button and widget (UI only) -->
+      <div style="margin-top:12px">
+        <button id="chat-toggle" class="btn ghost" aria-expanded="false" style="display:flex;align-items:center;gap:8px">
+          <img src="img/globotexto.png" alt="Chat" width="20" style="display:block">
+          Chatear con nosotros
+        </button>
+      </div>
+
+      <div id="chat-widget" class="chat-widget" aria-hidden="true">
+        <div class="chat-header">
+          <strong>HydroFlex Chat</strong>
+          <button id="chat-close" class="chat-close" aria-label="Cerrar">✕</button>
+        </div>
+        <div class="chat-body">
+          <div class="chat-message"><span class="small"><strong>HydroFlex</strong> Hola 👋 ¿En qué podemos ayudarte?</span></div>
+          <div class="chat-message user"><span class="small">Quiero información sobre la disponibilidad.</span></div>
+          <div class="chat-note small">Este chat es demo y no envía mensajes.</div>
+        </div>
+        <div class="chat-input">
+          <input type="text" placeholder="Escribe un mensaje..." disabled>
+          <button class="btn" disabled>Enviar</button>
+        </div>
+      </div>
+
+      <div class="section">
+        <h3>Preguntas frecuentes</h3>
+        <div class="accordion">
+          <div class="accordion-item">
+            <div class="accordion-header">¿Dónde puedo comprar HydroFlex?</div>
+            <div class="accordion-body">HydroFlex está disponible a través de distribuidores autorizados. Contactanos para saber dónde comprar en tu zona.</div>
+          </div>
+          <div class="accordion-item">
+            <div class="accordion-header">¿Cuáles son las especificaciones técnicas?</div>
+            <div class="accordion-body">Podemos enviarte la ficha técnica completa con todas las especificaciones, certificaciones y detalles de materiales.</div>
+          </div>
+          <div class="accordion-item">
+            <div class="accordion-header">¿Ofrecen garantía?</div>
+            <div class="accordion-body">Sí, HydroFlex incluye garantía por defectos de fabricación. Consultanos por los términos específicos.</div>
+          </div>
+          <div class="accordion-item">
+            <div class="accordion-header">¿Hacen envíos internacionales?</div>
+            <div class="accordion-body">Sí, realizamos envíos internacionales. Contactanos para consultar costos y tiempos de entrega.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <aside class="right">
+      <div class="card">
+        <h4>Información de contacto</h4>
+        <p class="small"><strong>Email</strong><br>santi2008guerra@gmail.com</p>
+        <p class="small"><strong>Teléfono</strong><br>+54 9 11 3375-3829</p>
+        <p class="small"><strong>Ubicación</strong><br>CABA</p>
+        <p class="small" style="margin-top:12px;border-top:1px solid rgba(2,6,23,0.06);padding-top:12px"><strong>Tiempo de respuesta</strong><br>Respondemos en 24-48 horas hábiles.</p>
+      </div>
+    </aside>
+  </section>
+
+  <footer class="footer">
+    <div>© 2025 HydroFlex</div>
+    <div class="small">Sitio oficial</div>
+  </footer>
+</main>
+<script src="script.js"></script>
+</body>
+</html>

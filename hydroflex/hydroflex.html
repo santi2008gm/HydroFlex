@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>HydroFlex — Producto</title><link rel="stylesheet" href="style.css"></head>
+<body>
+<header class="header">
+  <div class="container header-inner">
+    <a class="brand" href="index.html"><div class="logo"><img src="img/logo.svg" alt="logo" width="28"></div><div><strong>HydroFlex</strong><div class="small">Hidratación inteligente</div></div></a>
+    <nav class="nav">
+      <a href="index.html">Inicio</a>
+      <a href="hydroflex.html">Producto</a>
+      <a href="tecnologia.html">Tecnología</a>
+      <a href="sustentabilidad.html">Sustentabilidad</a>
+      <a href="quienes-somos.html">Quiénes somos</a>
+      <a href="contacto.html">Contacto</a>
+      <a href="carrito.html" class="cart-link" aria-label="carrito">Carrito <span id="cart-count">0</span></a>
+    </nav>
+<button id="menu-toggle" aria-label="Abrir menú">☰</button>
+  </div>
+</header>
+
+<main class="container">
+  <section class="section card">
+    <h2>Ficha técnica</h2>
+    <table class="table">
+      <tr><th>Item</th><th>Especificación</th></tr>
+      <tr><td>Capacidad</td><td>500 ml / 750 ml</td></tr>
+      <tr><td>Material</td><td>Acero inoxidable 18/8, tapa reciclable</td></tr>
+      <tr><td>Sensor</td><td>LED multicolor, IP67</td></tr>
+      <tr><td>Batería</td><td>USB-C recargable, +30 días por carga (uso medio)</td></tr>
+      <tr><td>Peso</td><td>~320 g</td></tr>
+    </table>
+
+    <h3 style="margin-top:12px">Galería</h3>
+    <div class="gallery" style="margin-top:8px">
+      <img src="img/hydroflex1.png" alt="HydroFlex 1">
+      <img src="img/hydroflex2.png" alt="HydroFlex 2">
+      <img src="img/hydroflex3.png" alt="HydroFlex 3">
+    </div>
+
+    <h3 style="margin-top:12px">Por qué elegir HydroFlex</h3>
+    <div class="features" style="margin-top:8px">
+      <div class="feature"><h4>Durabilidad</h4><div class="small">Diseñada para años de uso.</div></div>
+      <div class="feature"><h4>Compatibilidad</h4><div class="small">Encaja en portavasos estándar.</div></div>
+      <div class="feature"><h4>Mantenimiento</h4><div class="small">Fácil de desmontar y lavar.</div></div>
+    </div>
+
+    <!-- Purchase block -->
+    <div class="section" style="margin-top:14px;">
+      <h3>Comprar HydroFlex</h3>
+      <div class="card" style="display:flex;gap:12px;align-items:center;flex-wrap:wrap">
+        <div style="flex:1;min-width:220px">
+          <label for="product-size">Capacidad</label>
+          <select id="product-size">
+            <option value="500">500</option>
+            <option value="750">750</option>
+          </select>
+        </div>
+        <div>
+          <label for="product-qty">Cantidad</label>
+          <input id="product-qty" class="qty-input" type="number" min="1" value="1" style="width:80px">
+        </div>
+        <div>
+          <label>Precio unitario</label>
+          <div class="small" style="font-weight:700;" aria-live="polite"><span id="unit-price">45</span> ARS</div>
+        </div>
+        <div style="margin-left:auto">
+          <button id="add-to-cart" class="btn">Añadir al carrito</button>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top:12px" class="cta"><a class="btn" href="contacto.html">Solicitar ficha técnica</a><a class="btn ghost" href="index.html">Volver</a></div>
+  </section>
+
+  <footer class="footer"><div>© 2025 HydroFlex</div><div class="small">Sitio oficial</div></footer>
+</main>
+<script src="script.js"></script>
+</body></html>
