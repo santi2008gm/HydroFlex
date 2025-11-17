@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <!-- Meta información de la página -->
+  <meta charset="utf-8"> <!-- Establece la codificación de caracteres para soportar caracteres especiales -->
+  <meta name="viewport" content="width=device-width,initial-scale=1"> <!-- Hace que el diseño se adapte a la pantalla del dispositivo -->
+  <title>Contacto — HydroFlex</title> <!-- Título de la página, que aparece en la pestaña del navegador -->
+  <link rel="stylesheet" href="style.css"> <!-- Enlace al archivo de estilos CSS para aplicar el formato visual -->
+</head>
+<body>
+
+  <!-- Cabecera de la página -->
+  <header class="header">
+    <div class="container header-inner">
+      <!-- Enlace a la página principal con el logo y nombre de la marca -->
+      <a class="brand" href="index.html">
+        <div class="logo">
+          <!-- Imagen del logo de la marca -->
+          <img src="img/logo.svg" alt="HydroFlex logo" width="28">
+        </div>
+        <div>
+          <strong>HydroFlex</strong> <!-- Nombre de la marca -->
+          <div class="small">Hidratación inteligente</div> <!-- Subtítulo -->
+        </div>
+      </a>
+
+      <!-- Menú de navegación con enlaces a otras secciones del sitio -->
+      <nav class="nav" aria-label="principal">
+        <a href="index.html">Inicio</a> <!-- Enlace a la página de inicio -->
+        <a href="hydroflex.html">Producto</a> <!-- Enlace a la página del producto -->
+        <a href="tecnologia.html">Tecnología</a> <!-- Enlace a la página sobre la tecnología -->
+        <a href="sustentabilidad.html">Sustentabilidad</a> <!-- Enlace a la página sobre sustentabilidad -->
+        <a href="quienes-somos.html">Quiénes somos</a> <!-- Enlace a la página sobre la empresa -->
+        <a href="contacto.html">Contacto</a> <!-- Enlace a la página de contacto -->
+        <a href="carrito.html" class="cart-link" aria-label="carrito">Carrito <span id="cart-count">0</span></a> <!-- Enlace al carrito con el número de artículos -->
+      </nav>
+
+      <!-- Botón para abrir el menú en dispositivos móviles -->
+      <button id="menu-toggle" aria-label="Abrir menú">☰</button>
+    </div>
+  </header>
+
+  <!-- Contenido principal de la página -->
+  <main class="container">
+    <section class="hero">
+      <div class="left">
+        <h1 class="h1">Contactá a HydroFlex</h1> <!-- Título principal -->
+        <p class="lead">¿Preguntas sobre el producto, disponibilidad o distribución? Escribinos y te respondemos.</p> <!-- Descripción que invita a contactar -->
+
+        <div class="section">
+          <h3>Formulario de contacto</h3>
+          <!-- Formulario que envía los datos a un servicio externo (Formspree) -->
+          <form action="https://formspree.io/f/xdkynrbd" method="POST">
+            <!-- Campos del formulario para nombre, email, asunto y mensaje -->
+            <div class="form-row">
+              <div>
+                <label for="name">Nombre</label>
+                <input id="name" name="name" required placeholder="Tu nombre"> <!-- Campo de nombre -->
+              </div>
+              <div>
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" required placeholder="tu@email.com"> <!-- Campo de email -->
+              </div>
+            </div>
+
+            <label for="asunto">Asunto</label>
+            <input id="asunto" name="asunto" placeholder="Ej: Ficha técnica, distribución, consulta"> <!-- Campo de asunto -->
+
+            <label for="message">Mensaje</label>
+            <textarea id="message" name="message" rows="5" required placeholder="Cuéntanos qué necesitas..."></textarea> <!-- Campo de mensaje -->
+
+            <!-- Botones para enviar el formulario o regresar -->
+            <div style="margin-top:12px;display:flex;gap:10px">
+              <button class="btn" type="submit">Enviar mensaje</button> <!-- Botón para enviar el formulario -->
+              <a class="btn ghost" href="index.html">Volver</a> <!-- Enlace para volver a la página principal -->
+            </div>
+          </form>
+        </div>
+
+        <!-- Botón para abrir el chat en vivo (UI solo) -->
+        <div style="margin-top:12px">
+          <button id="chat-toggle" class="btn ghost" aria-expanded="false" style="display:flex;align-items:center;gap:8px">
+            <img src="img/globotexto.png" alt="Chat" width="20" style="display:block"> <!-- Icono de chat -->
+            Chatear con nosotros
+          </button>
+        </div>
+
+        <!-- Widget de chat (solo UI, no funcional) -->
+        <div id="chat-widget" class="chat-widget" aria-hidden="true">
+          <div class="chat-header">
+            <strong>HydroFlex Chat</strong> <!-- Encabezado del chat -->
+            <button id="chat-close" class="chat-close" aria-label="Cerrar">✕</button> <!-- Botón para cerrar el chat -->
+          </div>
+          <div class="chat-body">
+            <div class="chat-message"><span class="small"><strong>HydroFlex</strong> Hola 👋 ¿En qué podemos ayudarte?</span></div> <!-- Mensaje inicial del chat -->
+            <div class="chat-message user"><span class="small">Quiero información sobre la disponibilidad.</span></div> <!-- Mensaje del usuario (ejemplo) -->
+            <div class="chat-note small">Este chat es demo y no envía mensajes.</div> <!-- Nota que explica que el chat no es funcional -->
+          </div>
+          <div class="chat-input">
+            <input type="text" placeholder="Escribe un mensaje..." disabled> <!-- Campo de entrada de mensaje (deshabilitado) -->
+            <button class="btn" disabled>Enviar</button> <!-- Botón de enviar (deshabilitado) -->
+          </div>
+        </div>
+
+        <div class="section">
+          <h3>Preguntas frecuentes</h3>
+          <!-- Acordeón con preguntas frecuentes -->
+          <div class="accordion">
+            <!-- Cada item del acordeón -->
+            <div class="accordion-item">
+              <div class="accordion-header">¿Dónde puedo comprar HydroFlex?</div> <!-- Título de la pregunta -->
+              <div class="accordion-body">HydroFlex está disponible a través de distribuidores autorizados...</div> <!-- Respuesta a la pregunta -->
+            </div>
+            <!-- Más preguntas frecuentes aquí -->
+          </div>
+        </div>
+      </div>
+
+      <!-- Información adicional en el lado derecho de la página -->
+      <aside class="right">
+        <div class="card">
+          <h4>Información de contacto</h4>
+          <p class="small"><strong>Email</strong><br>santi2008guerra@gmail.com</p> <!-- Dirección de correo -->
+          <p class="small"><strong>Teléfono</strong><br>+54 9 11 3375-3829</p> <!-- Número de teléfono -->
+          <p class="small"><strong>Ubicación</strong><br>CABA</p> <!-- Ubicación -->
+          <p class="small" style="margin-top:12px;border-top:1px solid rgba(2,6,23,0.06);padding-top:12px"><strong>Tiempo de respuesta</strong><br>Respondemos en 24-48 horas hábiles.</p> <!-- Tiempo estimado de respuesta -->
+        </div>
+      </aside>
+    </section>
+
+    <!-- Pie de página -->
+    <footer class="footer">
+      <div>© 2025 HydroFlex</div> <!-- Copyright de la página -->
+      <div class="small">Sitio oficial</div> <!-- Texto adicional sobre el sitio -->
+    </footer>
+  </main>
+
+  <!-- Enlace al archivo de JavaScript para funcionalidades dinámicas -->
+  <script src="script.js"></script>
+</body>
+</html>

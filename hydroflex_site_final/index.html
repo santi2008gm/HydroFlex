@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <!-- Meta etiquetas para establecer la codificación y hacer la página responsive -->
+  <meta charset="utf-8"> <!-- Codificación de caracteres UTF-8 -->
+  <meta name="viewport" content="width=device-width,initial-scale=1"> <!-- Adaptación de la página a distintos dispositivos -->
+  <title>HydroFlex — Hidratación inteligente</title> <!-- Título de la página que aparece en la pestaña del navegador -->
+  <link rel="stylesheet" href="style.css"> <!-- Enlace al archivo CSS para el diseño y estilo de la página -->
+</head>
+<body>
+
+  <!-- Cabecera con logo y menú de navegación -->
+  <header class="header">
+    <div class="container header-inner">
+      <!-- Enlace al inicio con el logo y nombre de la marca -->
+      <a class="brand" href="index.html">
+        <div class="logo"><img src="img/logo.svg" alt="HydroFlex logo" width="28"></div> <!-- Logo de la marca -->
+        <div><strong>HydroFlex</strong><div class="small">Hidratación inteligente</div></div> <!-- Nombre y subtítulo de la marca -->
+      </a>
+      <!-- Menú de navegación principal -->
+      <nav class="nav" aria-label="principal">
+        <a href="index.html">Inicio</a> <!-- Enlace a la página de inicio -->
+        <a href="hydroflex.html">Producto</a> <!-- Enlace a la página del producto -->
+        <a href="tecnologia.html">Tecnología</a> <!-- Enlace a la página de tecnología -->
+        <a href="sustentabilidad.html">Sustentabilidad</a> <!-- Enlace a la página de sustentabilidad -->
+        <a href="quienes-somos.html">Quiénes somos</a> <!-- Enlace a la página sobre la empresa -->
+        <a href="contacto.html">Contacto</a> <!-- Enlace a la página de contacto -->
+        <a href="carrito.html" class="cart-link" aria-label="carrito">Carrito <span id="cart-count">0</span></a> <!-- Enlace al carrito de compras -->
+      </nav>
+      <!-- Botón para abrir el menú en dispositivos móviles -->
+      <button id="menu-toggle" aria-label="Abrir menú">☰</button>
+    </div>
+  </header>
+
+  <!-- Contenido principal -->
+  <main class="container">
+    <!-- Sección principal (hero) -->
+    <section class="hero">
+      <div class="left">
+        <!-- Badge indicando que es un producto de industria nacional -->
+        <div class="badge">Industria Nacional.</div>
+        <h1 class="h1">HydroFlex — botella inteligente y sustentable</h1>
+        <!-- Descripción breve del producto -->
+        <p class="lead">Diseñada para quienes viven en movimiento: recordatorios LED, materiales reciclables y diseño ergonómico.</p>
+        <!-- Botones de llamada a la acción -->
+        <div class="cta">
+          <a class="btn" href="hydroflex.html">Conocer HydroFlex</a> <!-- Enlace para aprender más sobre el producto -->
+          <a class="btn ghost" href="contacto.html">Contactar empresa</a> <!-- Enlace para contactar a la empresa -->
+        </div>
+
+        <div class="section">
+          <h3>Qué es HydroFlex</h3>
+          <!-- Descripción detallada y beneficios del producto -->
+          <div class="grid-two">
+            <div>
+              <p class="small">HydroFlex combina tecnología y diseño para ayudarte a mantener una hidratación constante. Su sensor LED te guía con señales visuales y su carcasa está hecha para durar.</p>
+              <!-- Características del producto -->
+              <div class="features">
+                <div class="feature"><svg width="32" height="32"><circle cx="16" cy="16" r="14" fill="#e6fbfb"/></svg><h4>Sensor LED</h4><div class="small">Recordatorios visuales</div></div>
+                <div class="feature"><svg width="32" height="32"><rect width="32" height="32" rx="6" fill="#f0fff8"/></svg><h4>Materiales</h4><div class="small">Acero reciclable</div></div>
+                <div class="feature"><svg width="32" height="32"><path d="M0 0h32v32H0z" fill="#eef7fb"/></svg><h4>Diseño</h4><div class="small">Ergonómico y portátil</div></div>
+              </div>
+            </div>
+            <!-- Imagen y descripción adicional -->
+            <aside class="right card">
+              <img src="img/hydroflex2.png" alt="HydroFlex" class="aside-img">
+              <p class="small" style="margin-top:12px">Disponible en colores sobrios y tonos naturales que resaltan su identidad sustentable.</p>
+            </aside>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-right">
+        <div class="card">
+          <img src="img/hydroflex1.png" alt="hero" class="hero-img"> <!-- Imagen destacada del producto -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Sección de beneficios del producto -->
+    <section class="section card">
+      <h3>Beneficios destacados</h3>
+      <div class="features" style="margin-top:12px">
+        <div class="feature"><h4>Mejora tu hidratación</h4><div class="small">Recordatorios para beber regularmente.</div></div>
+        <div class="feature"><h4>Menos plástico</h4><div class="small">Materiales pensados para durar y reciclarse.</div></div>
+        <div class="feature"><h4>Fácil de usar</h4><div class="small">Interfaz simple y batería USB-C.</div></div>
+      </div>
+    </section>
+
+    <!-- Sección de testimonios de usuarios -->
+    <section class="section card">
+      <h3>Testimonios</h3>
+      <div class="testimonials" id="testimonials">
+        <!-- Cada tarjeta contiene un testimonio de usuario -->
+        <div class="testimonial card"><strong>Sofía</strong><p class="small">"Con HydroFlex mejoré mi consumo de agua durante el día. El indicador LED es súper útil."</p></div>
+        <div class="testimonial card"><strong>Lucas</strong><p class="small">"Ligera, resistente y se ve muy bien en mi mochila de trekking."</p></div>
+        <div class="testimonial card"><strong>María</strong><p class="small">"Me encanta que sea fácil de limpiar y que la tapa sea reciclable."</p></div>
+      </div>
+      <!-- Indicadores para cambiar entre los testimonios -->
+      <div class="dots" style="margin-top:8px">
+        <div class="dot"></div><div class="dot"></div><div class="dot"></div>
+      </div>
+    </section>
+
+    <!-- Sección de llamada a la acción para contactar -->
+    <section class="section card">
+      <h3>Unite al cambio</h3>
+      <p class="small">Si querés más info técnica o institucional, escribinos y te respondemos con ficha técnica, disponibilidad y certificaciones.</p>
+      <!-- Botón de contacto -->
+      <div style="margin-top:10px"><a class="btn" href="contacto.html">Contactar empresa</a></div>
+    </section>
+
+    <!-- Pie de página -->
+    <footer class="footer">
+      <div>© 2025 HydroFlex</div> <!-- Copyright de la marca -->
+      <div class="small">Sitio oficial</div> <!-- Información adicional -->
+    </footer>
+  </main>
+
+  <!-- Script de JavaScript para interacciones dinámicas -->
+  <script src="script.js"></script>
+</body>
+</html>

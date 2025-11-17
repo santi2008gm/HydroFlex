@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <!-- Metaetiquetas para la codificación de caracteres y la configuración de la vista en dispositivos móviles -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <!-- Título de la página que aparece en la pestaña del navegador -->
+  <title>HydroFlex — Tecnología</title>
+  <!-- Vinculación a la hoja de estilos CSS externa para el diseño de la página -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Cabecera de la página con el logo y menú de navegación -->
+  <header class="header">
+    <div class="container header-inner">
+      <!-- Logo de la marca, que también funciona como enlace a la página de inicio -->
+      <a class="brand" href="index.html">
+        <div class="logo"><img src="img/logo.svg" alt="logo" width="28"></div>
+        <div><strong>HydroFlex</strong><div class="small">Hidratación inteligente</div></div>
+      </a>
+      <!-- Menú de navegación que permite acceder a diferentes secciones del sitio -->
+      <nav class="nav">
+        <a href="index.html">Inicio</a>
+        <a href="hydroflex.html">Producto</a>
+        <a href="tecnologia.html">Tecnología</a>
+        <a href="sustentabilidad.html">Sustentabilidad</a>
+        <a href="quienes-somos.html">Quiénes somos</a>
+        <a href="contacto.html">Contacto</a>
+        <a href="carrito.html" class="cart-link" aria-label="carrito">Carrito <span id="cart-count">0</span></a>
+      </nav>
+      <!-- Botón de menú para dispositivos móviles, que permite abrir la navegación -->
+      <button id="menu-toggle" aria-label="Abrir menú">☰</button>
+    </div>
+  </header>
+
+  <!-- Contenido principal de la página -->
+  <main class="container">
+    <section class="section card">
+      <!-- Título principal de la sección: Tecnología -->
+      <h2>Tecnología</h2>
+      <!-- Descripción breve del sensor LED inteligente que utiliza HydroFlex -->
+      <p class="lead">Sensor LED inteligente que evalúa la última ingesta y sugiere tomar agua mediante un anillo luminoso.</p>
+
+      <!-- Subtítulo que explica cómo funciona el sensor -->
+      <h3>Cómo funciona</h3>
+      <!-- Lista ordenada que explica los pasos del funcionamiento del sensor LED -->
+      <ol>
+        <li>El sensor detecta interacción y registra la hora de la última bebida.</li>
+        <li>Tras un tiempo configurado, el LED cambia a amarillo como recordatorio.</li>
+        <li>Si no hay respuesta, el LED pasa a azul y emite una animación leve.</li>
+      </ol>
+
+      <!-- Subtítulo sobre la comparativa entre HydroFlex y otros sensores -->
+      <h3 style="margin-top:12px">Comparativa</h3>
+      <!-- Explicación sobre cómo el sensor de HydroFlex es más eficiente que los sensores comunes -->
+      <p class="small">A diferencia de sensores simples, HydroFlex usa lógica de promedio de consumo y baja energía para no afectar la batería.</p>
+
+      <!-- Botones de llamada a la acción para contactar con soporte o volver al inicio -->
+      <div style="margin-top:12px" class="cta">
+        <a class="btn" href="contacto.html">Contactar soporte</a>
+        <a class="btn ghost" href="index.html">Volver</a>
+      </div>
+    </section>
+
+    <!-- Pie de página con derechos de autor y enlace al sitio oficial -->
+    <footer class="footer">
+      <div>© 2025 HydroFlex</div>
+      <div class="small">Sitio oficial</div>
+    </footer>
+  </main>
+
+  <!-- Enlace a archivo JavaScript externo -->
+  <script src="script.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <!-- Meta información de la página -->
+  <meta charset="utf-8"> <!-- Establece la codificación de caracteres para soportar caracteres especiales -->
+  <meta name="viewport" content="width=device-width,initial-scale=1"> <!-- Hace que el diseño se adapte a la pantalla del dispositivo -->
+  <title>Carrito — HydroFlex</title> <!-- Título de la página que aparece en la pestaña del navegador -->
+  <link rel="stylesheet" href="style.css"> <!-- Enlace al archivo de estilos CSS para darle formato a la página -->
+</head>
+<body>
+
+  <!-- Cabecera de la página -->
+  <header class="header">
+    <div class="container header-inner">
+      <!-- Enlace a la página principal con el logo y nombre de la marca -->
+      <a class="brand" href="index.html">
+        <div class="logo">
+          <!-- Imagen del logo de la marca -->
+          <img src="img/logo.svg" alt="HydroFlex logo" width="28">
+        </div>
+        <div>
+          <strong>HydroFlex</strong>
+          <div class="small">Hidratación inteligente</div> <!-- Subtítulo debajo del nombre -->
+        </div>
+      </a>
+
+      <!-- Menú de navegación principal -->
+      <nav class="nav" aria-label="principal">
+        <a href="index.html">Inicio</a> <!-- Enlace a la página de inicio -->
+        <a href="hydroflex.html">Producto</a> <!-- Enlace a la página del producto -->
+        <a href="tecnologia.html">Tecnología</a> <!-- Enlace a la página sobre la tecnología -->
+        <a href="sustentabilidad.html">Sustentabilidad</a> <!-- Enlace a la página sobre sustentabilidad -->
+        <a href="quienes-somos.html">Quiénes somos</a> <!-- Enlace a la página de información sobre la empresa -->
+        <a href="contacto.html">Contacto</a> <!-- Enlace a la página de contacto -->
+        <a href="carrito.html" class="cart-link" aria-label="carrito">Carrito <span id="cart-count">0</span></a> <!-- Enlace al carrito con el número de artículos -->
+      </nav>
+
+      <!-- Botón para abrir el menú en dispositivos móviles -->
+      <button id="menu-toggle" aria-label="Abrir menú">☰</button>
+    </div>
+  </header>
+
+  <!-- Contenido principal de la página -->
+  <main class="container">
+    <!-- Sección donde se muestra el contenido del carrito -->
+    <section class="section card">
+      <h2>Tu carrito</h2> <!-- Título de la sección del carrito -->
+      <div id="cart-content"></div> <!-- Aquí se mostrará el contenido del carrito dinámicamente -->
+    </section>
+
+    <!-- Pie de página -->
+    <footer class="footer">
+      <div>© 2025 HydroFlex</div> <!-- Texto del copyright -->
+      <div class="small">Sitio oficial</div> <!-- Información adicional sobre el sitio -->
+    </footer>
+  </main>
+
+  <!-- Enlace al archivo de JavaScript para funcionalidad dinámica -->
+  <script src="script.js"></script>
+</body>
+</html>

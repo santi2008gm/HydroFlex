@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <!-- Meta información para la página -->
+  <meta charset="utf-8"> <!-- Establece la codificación de caracteres -->
+  <meta name="viewport" content="width=device-width,initial-scale=1"> <!-- Hace la página responsive (se adapta a la pantalla del dispositivo) -->
+  <title>HydroFlex — Producto</title> <!-- Título de la página que aparece en la pestaña del navegador -->
+  <link rel="stylesheet" href="style.css"> <!-- Enlace al archivo de estilos CSS para la apariencia -->
+</head>
+
+<body>
+
+  <!-- Cabecera de la página -->
+  <header class="header">
+    <div class="container header-inner">
+      <!-- Enlace a la página de inicio con el logo y nombre de la marca -->
+      <a class="brand" href="index.html">
+        <div class="logo"><img src="img/logo.svg" alt="logo" width="28"></div> <!-- Logo de la marca -->
+        <div><strong>HydroFlex</strong><div class="small">Hidratación inteligente</div></div> <!-- Nombre y subtítulo de la marca -->
+      </a>
+      <!-- Menú de navegación principal -->
+      <nav class="nav">
+        <a href="index.html">Inicio</a> <!-- Enlace a la página de inicio -->
+        <a href="hydroflex.html">Producto</a> <!-- Enlace a la página de producto (actual) -->
+        <a href="tecnologia.html">Tecnología</a> <!-- Enlace a la página de tecnología -->
+        <a href="sustentabilidad.html">Sustentabilidad</a> <!-- Enlace a la página sobre sustentabilidad -->
+        <a href="quienes-somos.html">Quiénes somos</a> <!-- Enlace a la página sobre la empresa -->
+        <a href="contacto.html">Contacto</a> <!-- Enlace a la página de contacto -->
+        <a href="carrito.html" class="cart-link" aria-label="carrito">Carrito <span id="cart-count">0</span></a> <!-- Enlace al carrito, con el número de artículos -->
+      </nav>
+      <!-- Botón para abrir el menú en dispositivos móviles -->
+      <button id="menu-toggle" aria-label="Abrir menú">☰</button>
+    </div>
+  </header>
+
+  <!-- Contenido principal de la página -->
+  <main class="container">
+    <section class="section card">
+      <h2>Ficha técnica</h2>
+      <!-- Tabla con las especificaciones del producto -->
+      <table class="table">
+        <tr><th>Item</th><th>Especificación</th></tr>
+        <tr><td>Capacidad</td><td>500 ml / 750 ml</td></tr> <!-- Información sobre la capacidad -->
+        <tr><td>Material</td><td>Acero inoxidable 18/8, tapa reciclable</td></tr> <!-- Información sobre los materiales -->
+        <tr><td>Sensor</td><td>LED multicolor, IP67</td></tr> <!-- Información sobre el sensor -->
+        <tr><td>Batería</td><td>USB-C recargable, +30 días por carga (uso medio)</td></tr> <!-- Información sobre la batería -->
+        <tr><td>Peso</td><td>~320 g</td></tr> <!-- Peso del producto -->
+      </table>
+
+      <h3 style="margin-top:12px">Galería</h3>
+      <!-- Galería de imágenes del producto -->
+      <div class="gallery" style="margin-top:8px">
+        <img src="img/hydroflex1.png" alt="HydroFlex 1"> <!-- Imagen del producto 1 -->
+        <img src="img/hydroflex2.png" alt="HydroFlex 2"> <!-- Imagen del producto 2 -->
+        <img src="img/hydroflex3.png" alt="HydroFlex 3"> <!-- Imagen del producto 3 -->
+      </div>
+
+      <h3 style="margin-top:12px">Por qué elegir HydroFlex</h3>
+      <!-- Características destacadas del producto -->
+      <div class="features" style="margin-top:8px">
+        <div class="feature"><h4>Durabilidad</h4><div class="small">Diseñada para años de uso.</div></div> <!-- Característica de durabilidad -->
+        <div class="feature"><h4>Compatibilidad</h4><div class="small">Encaja en portavasos estándar.</div></div> <!-- Característica de compatibilidad -->
+        <div class="feature"><h4>Mantenimiento</h4><div class="small">Fácil de desmontar y lavar.</div></div> <!-- Característica de fácil mantenimiento -->
+      </div>
+
+      <!-- Bloque para la compra del producto -->
+      <div class="section" style="margin-top:14px;">
+        <h3>Comprar HydroFlex</h3>
+        <div class="card" style="display:flex;gap:12px;align-items:center;flex-wrap:wrap">
+          <!-- Selección de capacidad del producto -->
+          <div style="flex:1;min-width:220px">
+            <label for="product-size">Capacidad</label>
+            <select id="product-size">
+              <option value="500">500</option> <!-- Opción de capacidad de 500 ml -->
+              <option value="750">750</option> <!-- Opción de capacidad de 750 ml -->
+            </select>
+          </div>
+          <!-- Selección de cantidad del producto -->
+          <div>
+            <label for="product-qty">Cantidad</label>
+            <input id="product-qty" class="qty-input" type="number" min="1" value="1" style="width:80px"> <!-- Campo para seleccionar la cantidad -->
+          </div>
+          <!-- Muestra el precio unitario del producto -->
+          <div>
+            <label>Precio unitario</label>
+            <div class="small" style="font-weight:700;" aria-live="polite"><span id="unit-price">45</span> ARS</div> <!-- Precio del producto en ARS -->
+          </div>
+          <!-- Botón para añadir el producto al carrito -->
+          <div style="margin-left:auto">
+            <button id="add-to-cart" class="btn">Añadir al carrito</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Llamadas a la acción (CTAs) -->
+      <div style="margin-top:12px" class="cta">
+        <a class="btn" href="contacto.html">Solicitar ficha técnica</a> <!-- Enlace para solicitar la ficha técnica -->
+        <a class="btn ghost" href="index.html">Volver</a> <!-- Enlace para volver a la página principal -->
+      </div>
+    </section>
+
+    <!-- Pie de página -->
+    <footer class="footer">
+      <div>© 2025 HydroFlex</div> <!-- Copyright -->
+      <div class="small">Sitio oficial</div> <!-- Información adicional del sitio -->
+    </footer>
+  </main>
+
+  <!-- Enlace al archivo de JavaScript para la funcionalidad dinámica -->
+  <script src="script.js"></script>
+
+</body>
+</html>
