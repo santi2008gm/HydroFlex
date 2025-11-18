@@ -1,0 +1,668 @@
+/* VARIABLES GLOBALES - Define colores y estilos reutilizables en toda la página */
+:root {
+  --bg: #f6fbff;                                                                    /* Color fondo azul claro */
+  --card: #ffffff;                                                                  /* Blanco para tarjetas */
+  --accent: #0ea5a4;                                                                /* Turquesa principal - botones, iconos */
+  --accent-2: #2563eb;                                                              /* Azul - textos activos, hover */
+  --muted: #6b7280;                                                                 /* Gris para textos secundarios */
+  --radius: 14px;                                                                   /* Radio de bordes redondeados */
+  --fw: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; /* Tipografía: Inter + alternativas */
+}
+
+
+/* RESET - Normaliza estilos por defecto de navegadores */
+* { box-sizing: border-box; }                                                      /* Incluye padding y border en el ancho total */
+html, body { height: 100%; }                                                       /* Ocupan toda la altura de la ventana */
+
+body {
+  margin: 0;                                                                        /* Elimina margen por defecto del body */
+  font-family: var(--fw);                                                          /* Aplica fuente Inter en todo */
+  background: linear-gradient(180deg, #e8f7ff 0%, #f6fbff 100%);                   /* Gradiente azul claro de arriba a abajo */
+  color: #05232b;                                                                   /* Color de texto por defecto azul oscuro */
+  -webkit-font-smoothing: antialiased;                                             /* Suaviza letras en navegadores WebKit (Chrome, Safari) */
+  -moz-osx-font-smoothing: grayscale;                                              /* Suaviza letras en Firefox y Safari */
+  line-height: 1.45;                                                                /* Altura de línea para mejor legibilidad */
+}
+
+
+/* LAYOUT GENERAL - Contenedor principal de la página */
+.container {
+  max-width: 1100px;                                                                /* Ancho máximo del contenido */
+  margin: 36px auto;                                                                /* Centrado con margen arriba/abajo */
+  padding: 28px;                                                                    /* Espacio interno */
+  background: var(--card);                                                          /* Fondo blanco */
+  border-radius: 16px;                                                              /* Bordes muy redondeados */
+  box-shadow: 0 10px 30px rgba(2,6,23,0.06);                                        /* Sombra sutil debajo */
+}
+
+.section { margin-top: 18px; }                                                      /* Espaciado entre secciones */
+
+
+/* HEADER - Barra de navegación fija superior */
+.header {
+  position: sticky;                                                                 /* Se queda fijo al hacer scroll */
+  top: 0;                                                                           /* Pegado al tope */
+  background: rgba(255,255,255,0.98);                                              /* Blanco semi-transparente */
+  backdrop-filter: blur(6px);                                                       /* Efecto vidrio esmerilado detrás */
+  z-index: 1000;                                                                    /* Siempre encima de otros elementos */
+  border-bottom: 1px solid rgba(2,6,23,0.04);                                       /* Línea gris muy clara debajo */
+}
+
+.header-inner {
+  display: flex;                                                                    /* Alinea logo + nav horizontalmente */
+  align-items: center;                                                              /* Verticalemente centrado */
+  justify-content: space-between;                                                   /* Logo a la izq, nav a la derecha */
+  gap: 12px;                                                                        /* Espaciado entre elementos */
+  max-width: 1100px;                                                                /* Mismo ancho que contenedor */
+  margin: 0 auto;                                                                   /* Centrado */
+  padding: 20px 28px;                                                               /* Espacio interno */
+}
+
+.brand {
+  display: flex;                                                                    /* Logo y texto juntos */
+  align-items: center;                                                              /* Verticalmente centrados */
+  gap: 12px;                                                                        /* Espacio entre logo e icono */
+  text-decoration: none;                                                            /* Sin subrayado en el enlace */
+  color: inherit;                                                                   /* Hereda color del padre */
+}
+
+.logo {
+  width: 48px;                                                                      /* Ancho del logo */
+  height: 48px;                                                                     /* Alto del logo */
+  display: grid;                                                                    /* Centra contenido perfecto */
+  place-items: center;                                                              /* Centro horizontal y vertical */
+  border-radius: 10px;                                                              /* Bordes redondeados */
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));             /* Gradiente turquesa a azul */
+  color: white;                                                                     /* Texto blanco */
+  font-weight: 800;                                                                 /* Letras muy gruesas */
+}
+
+
+/* NAVEGACIÓN - Links del menú horizontal */
+.nav {
+  display: flex;                                                                    /* Links uno al lado del otro */
+  gap: 14px;                                                                        /* Espaciado entre links */
+  align-items: center;                                                              /* Verticalmente centrados */
+}
+
+.nav a {
+  color: #0f1724;                                                                   /* Color azul oscuro */
+  text-decoration: none;                                                            /* Sin subrayado */
+  padding: 10px 12px;                                                               /* Espacio interno */
+  border-radius: 8px;                                                               /* Bordes redondeados */
+  font-weight: 600;                                                                 /* Texto semi-grueso */
+}
+
+.nav a:hover {
+  background: rgba(37,99,235,0.08);                                                /* Fondo azul muy claro al pasar mouse */
+}
+
+
+/* BOTÓN HAMBURGUESA - Menú en móviles/tablets */
+#menu-toggle {
+  display: none;                                                                    /* Oculto en pantallas grandes */
+  font-size: 24px;                                                                  /* Icono grande */
+  background: transparent;                                                          /* Sin fondo */
+  border: 0;                                                                        /* Sin borde */
+  cursor: pointer;                                                                  /* Cursor para clickear */
+  color: #0f1724;                                                                   /* Color azul oscuro */
+}
+
+/* MENÚ DESPLEGABLE - Aparece cuando .nav tiene clase .show */
+.nav.show {
+  display: flex !important;                                                         /* Fuerza mostrar (anula display:none) */
+  flex-direction: column;                                                           /* Links apilados verticalmente */
+  position: absolute;                                                               /* Posicionado sobre otros elementos */
+  background: white;                                                                /* Fondo blanco */
+  right: 20px;                                                                      /* A 20px del borde derecho */
+  top: 70px;                                                                        /* A 70px del tope */
+  padding: 12px;                                                                    /* Espacio interno */
+  border-radius: 12px;                                                              /* Bordes redondeados */
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);                                          /* Sombra para destacar */
+}
+
+
+/* SECCIÓN HERO - Portada principal con título y botones */
+.hero {
+  display: flex;                                                                    /* Texto a la izq, imagen a la derecha */
+  gap: 24px;                                                                        /* Espacio entre los dos lados */
+  align-items: center;                                                              /* Verticalmente centrados */
+  margin-top: 16px;                                                                 /* Espacio arriba */
+}
+
+.hero .left { flex: 1; }                                                            /* Texto ocupa espacio disponible */
+
+.h1 {
+  font-size: 28px;                                                                  /* Título grande */
+  margin: 0 0 10px;                                                                 /* Sin margen arriba, 10px abajo */
+  line-height: 1.2;                                                                 /* Líneas más apretadas */
+}
+
+.lead {
+  color: var(--muted);                                                              /* Gris para subtítulo */
+  margin: 0 0 18px;                                                                 /* Sin margen arriba, 18px abajo */
+}
+
+.cta {
+  display: flex;                                                                    /* Botones uno al lado del otro */
+  gap: 12px;                                                                        /* Espacio entre botones */
+  flex-wrap: wrap;                                                                  /* Se saltan a nueva línea si no caben */
+}
+
+
+/* BOTONES - CTA (Call To Action) */
+.btn {
+  padding: 12px 16px;                                                               /* Espacio interno */
+  border-radius: 10px;                                                              /* Bordes redondeados */
+  border: 0;                                                                        /* Sin borde */
+  cursor: pointer;                                                                  /* Cursor para clickear */
+  font-weight: 700;                                                                 /* Texto grueso */
+  text-decoration: none;                                                            /* Sin subrayado */
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));              /* Gradiente turquesa a azul */
+  color: white;                                                                     /* Texto blanco */
+}
+
+.btn.ghost {
+  background: transparent;                                                          /* Sin fondo */
+  color: var(--accent-2);                                                           /* Texto azul */
+  border: 2px solid rgba(37,99,235,0.08);                                           /* Borde azul muy claro */
+}
+
+.right {
+  width: 320px;                                                                     /* Ancho fijo para la imagen hero */
+  display: grid;                                                                    /* Centra imagen */
+  place-items: center;                                                              /* Centro perfecto */
+}
+
+
+/* TARJETAS - Bloques de contenido */
+.card {
+  background: linear-gradient(180deg, rgba(2,6,23,0.02), transparent);             /* Gradiente gris muy claro */
+  padding: 18px;                                                                    /* Espacio interno */
+  border-radius: 12px;                                                              /* Bordes redondeados */
+}
+
+
+/* GRILLA DE 2 COLUMNAS - Texto + sidebar */
+.grid-two {
+  display: grid;                                                                    /* Layout en grilla */
+  grid-template-columns: 1fr 320px;                                                 /* Col izq flexible, derecha 320px */
+  gap: 18px;                                                                        /* Espacio entre columnas */
+}
+
+
+/* FEATURES - Características en 2 columnas */
+.features {
+  display: grid;                                                                    /* Layout en grilla */
+  grid-template-columns: repeat(2, 1fr);                                            /* 2 columnas iguales */
+  gap: 12px;                                                                        /* Espacio entre features */
+  margin-top: 12px;                                                                 /* Espacio arriba */
+}
+
+.feature {
+  background: rgba(2,6,23,0.02);                                                    /* Fondo gris muy claro */
+  padding: 12px;                                                                    /* Espacio interno */
+  border-radius: 10px;                                                              /* Bordes redondeados */
+}
+
+.feature h4 {
+  margin: 8px 0 4px;                                                                /* Margen reducido */
+}
+
+
+/* TESTIMONIOS - Carrusel de opiniones */
+.testimonials {
+  position: relative;                                                               /* Contenedor para posicionados absolutos */
+  width: 100%;                                                                      /* Ancho completo */
+  min-height: 120px;                                                                /* Alto mínimo */
+}
+
+.testimonial {
+  position: absolute;                                                               /* Superpuesto, se cambia con clases */
+  left: 0;                                                                          /* Pegado a la izquierda */
+  top: 0;                                                                           /* Pegado al tope */
+  width: 100%;                                                                      /* Ancho completo */
+  opacity: 0;                                                                       /* Invisible */
+  pointer-events: none;                                                             /* No se puede clickear */
+  transition: opacity .35s ease;                                                    /* Transición suave de 0.35s */
+  padding: 18px;                                                                    /* Espacio interno */
+  background: var(--card);                                                          /* Fondo blanco */
+  box-shadow: 0 8px 20px rgba(2,6,23,0.04);                                         /* Sombra sutil */
+  border: 1px solid rgba(2,6,23,0.02);                                              /* Borde gris muy claro */
+  color: #05232b;                                                                   /* Color de texto */
+}
+
+.testimonial.active {
+  position: relative;                                                               /* Visible sobre otros */
+  opacity: 1;                                                                       /* Visible */
+  pointer-events: auto;                                                             /* Se puede clickear */
+}
+
+.testimonial strong {
+  display: block;                                                                   /* En su propia línea */
+  font-size: 16px;                                                                  /* Texto grande */
+  margin-bottom: 6px;                                                               /* Espacio abajo */
+  color: #05232b;                                                                   /* Color azul oscuro */
+}
+
+.testimonial p.small {
+  color: var(--muted);                                                              /* Gris para comentario */
+  margin: 0;                                                                        /* Sin margen */
+}
+
+
+/* IMÁGENES - Hero e imágenes laterales */
+.hero-img,
+.aside-img {
+  width: 100%;                                                                      /* Ancho completo del contenedor */
+  height: auto;                                                                     /* Alto proporcional */
+  object-fit: cover;                                                                /* Cubre el espacio sin distorsionar */
+  border-radius: 12px;                                                              /* Bordes redondeados */
+  display: block;                                                                   /* Elimina espacio en línea */
+}
+
+.hero-img { max-width: 360px; }                                                    /* Ancho máximo de la imagen hero */
+.aside-img { max-width: 220px; }                                                   /* Ancho máximo de imagen lateral */
+
+
+/* GALERÍA - Grid de 3 imágenes */
+.gallery {
+  display: grid;                                                                    /* Layout en grilla */
+  grid-template-columns: repeat(3,1fr);                                             /* 3 columnas iguales */
+  gap: 12px;                                                                        /* Espacio entre imágenes */
+  margin-top: 8px;                                                                  /* Espacio arriba */
+}
+
+.gallery img {
+  width: 100%;                                                                      /* Ancho completo de su columna */
+  height: 220px;                                                                    /* Alto fijo */
+  object-fit: cover;                                                                /* Cubre el espacio */
+  border-radius: 12px;                                                              /* Bordes redondeados */
+}
+
+
+/* PUNTOS DE NAVEGACIÓN - Para carruseles */
+.dots {
+  display: flex;                                                                    /* Puntos uno al lado del otro */
+  gap: 8px;                                                                         /* Espacio entre puntos */
+  justify-content: center;                                                          /* Centrados */
+  margin-top: 12px;                                                                 /* Espacio arriba */
+}
+
+.dot {
+  width: 10px;                                                                      /* Punto pequeño cuadrado */
+  height: 10px;                                                                     /* Punto pequeño cuadrado */
+  border-radius: 50%;                                                               /* Redondo */
+  background: rgba(2,6,23,0.08);                                                    /* Gris claro */
+  cursor: pointer;                                                                  /* Cursor para clickear */
+}
+
+.dot.active {
+  background: var(--accent-2);                                                      /* Azul cuando está activo */
+}
+
+
+/* FOOTER - Pie de página */
+.footer {
+  display: flex;                                                                    /* Alinea contenido horizontalmente */
+  justify-content: space-between;                                                   /* Distribuye a los extremos */
+  align-items: center;                                                              /* Verticalmente centrado */
+  margin-top: 20px;                                                                 /* Espacio arriba */
+  color: var(--muted);                                                              /* Color gris */
+  font-size: 14px;                                                                  /* Texto pequeño */
+}
+
+.small { 
+  font-size: 13px;                                                                  /* Texto extra pequeño */
+  color: var(--muted);                                                              /* Gris */
+}
+
+
+/* FORMULARIOS - Inputs y textareas */
+form .row {
+  display: flex;                                                                    /* Campos en fila */
+  gap: 8px;                                                                         /* Espaciado entre campos */
+  flex-wrap: wrap;                                                                  /* Se saltan a nueva línea si no caben */
+}
+
+input, textarea {
+  width: 100%;                                                                      /* Ancho completo */
+  padding: 10px;                                                                    /* Espacio interno */
+  border-radius: 8px;                                                               /* Bordes redondeados */
+  border: 1px solid rgba(2,6,23,0.06);                                              /* Borde gris muy claro */
+  font-family: var(--fw);                                                           /* Usa la misma fuente */
+  font-size: 14px;                                                                  /* Texto normal */
+}
+
+input:focus, textarea:focus {
+  outline: none;                                                                    /* Elimina outline por defecto */
+  border-color: var(--accent);                                                      /* Borde turquesa al escribir */
+  background: rgba(14,165,164,0.02);                                                /* Fondo turquesa muy claro */
+}
+
+label {
+  display: block;                                                                   /* En su propia línea */
+  font-size: 13px;                                                                  /* Texto pequeño */
+  margin-bottom: 6px;                                                               /* Espacio abajo */
+  color: var(--muted);                                                              /* Gris */
+  font-weight: 600;                                                                 /* Semi-grueso */
+}
+
+.form-row {
+  display: grid;                                                                    /* Layout en grilla */
+  grid-template-columns: 1fr 1fr;                                                   /* 2 columnas iguales */
+  gap: 12px;                                                                        /* Espacio entre campos */
+}
+
+
+/* LOGO PEQUEÑO - Para footer, sidebar */
+.logo-small {
+  width: 36px;                                                                      /* Más pequeño que .logo */
+  height: 36px;                                                                     /* Cuadrado */
+  display: grid;                                                                    /* Centra contenido */
+  place-items: center;                                                              /* Centro perfecto */
+  border-radius: 8px;                                                               /* Bordes redondeados */
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));             /* Gradiente turquesa-azul */
+  color: white;                                                                     /* Texto blanco */
+  font-weight: 700;                                                                 /* Grueso */
+}
+
+
+/* BADGE - Etiqueta pequeña redondeada */
+.badge {
+  display: inline-block;                                                            /* En línea pero con dimensiones */
+  padding: 6px 8px;                                                                 /* Espacio interno pequeño */
+  background: rgba(14,165,164,0.12);                                                /* Fondo turquesa muy claro */
+  color: var(--accent-2);                                                           /* Texto azul */
+  border-radius: 999px;                                                             /* Totalmente redondeado */
+  font-weight: 700;                                                                 /* Texto grueso */
+  font-size: 13px;                                                                  /* Texto pequeño */
+}
+
+
+/* ACORDEÓN - Preguntas/respuestas expandibles */
+.accordion { 
+  border-radius: 8px;                                                               /* Bordes redondeados */
+  overflow: hidden;                                                                 /* Oculta bordes redondeados internos */
+}
+
+.accordion-item + .accordion-item { 
+  margin-top: 8px;                                                                  /* Espacio entre items */
+}
+
+.accordion-header {
+  background: rgba(2,6,23,0.02);                                                    /* Fondo gris claro */
+  padding: 12px;                                                                    /* Espacio interno */
+  cursor: pointer;                                                                  /* Cursor para clickear */
+  display: flex;                                                                    /* Título y flecha en fila */
+  justify-content: space-between;                                                   /* Título a la izq, flecha derecha */
+  align-items: center;                                                              /* Verticalmente centrados */
+  font-weight: 600;                                                                 /* Texto semi-grueso */
+}
+
+.accordion-header::after {
+  content: '▼';                                                                     /* Flecha hacia abajo */
+  font-size: 12px;                                                                  /* Pequeña */
+  transition: transform 0.3s;                                                       /* Rota con transición */
+}
+
+.accordion-body {
+  padding: 12px;                                                                    /* Espacio interno */
+  background: white;                                                                /* Fondo blanco */
+  display: none;                                                                    /* Oculto por defecto */
+  font-size: 14px;                                                                  /* Texto normal */
+}
+
+.accordion-body.open ~ .accordion-header::after {
+  transform: rotate(180deg);                                                        /* Flecha hacia arriba cuando abierto */
+}
+
+
+/* CARRITO - Links y contador */
+.nav .cart-link {
+  display: inline-flex;                                                             /* Icono + texto juntos */
+  align-items: center;                                                              /* Verticalmente centrados */
+  gap: 8px;                                                                         /* Espacio entre icono y badge */
+  text-decoration: none;                                                            /* Sin subrayado */
+  color: inherit;                                                                   /* Hereda color */
+  padding: 8px 10px;                                                                /* Espacio interno */
+  border-radius: 8px;                                                               /* Bordes redondeados */
+  font-weight: 700;                                                                 /* Grueso */
+}
+
+.nav .cart-link:hover {
+  background: rgba(37,99,235,0.06);                                                 /* Fondo azul muy claro al hover */
+}
+
+#cart-count {
+  display: none;                                                                    /* Oculto por defecto */
+  background: var(--accent-2);                                                      /* Fondo azul */
+  color: white;                                                                     /* Texto blanco */
+  border-radius: 999px;                                                             /* Totalmente redondeado */
+  padding: 3px 8px;                                                                 /* Espacio pequeño */
+  font-size: 12px;                                                                  /* Texto muy pequeño */
+  margin-left: 6px;                                                                 /* Espacio a la izquierda */
+  min-width: 22px;                                                                  /* Ancho mínimo */
+  text-align: center;                                                               /* Centrado */
+}
+
+
+/* ITEMS DEL CARRITO - Productos en carrito */
+.cart-item {
+  display: flex;                                                                    /* Imagen, info, cantidad en fila */
+  align-items: center;                                                              /* Verticalmente centrados */
+  gap: 12px;                                                                        /* Espacio entre elementos */
+  padding: 10px;                                                                    /* Espacio interno */
+  border-radius: 10px;                                                              /* Bordes redondeados */
+}
+
+.qty-btn {
+  background: transparent;                                                          /* Sin fondo */
+  border: 1px solid rgba(2,6,23,0.06);                                              /* Borde gris claro */
+  padding: 6px 8px;                                                                 /* Espacio pequeño */
+  border-radius: 6px;                                                               /* Bordes redondeados */
+  cursor: pointer;                                                                  /* Cursor para clickear */
+}
+
+.qty-input {
+  border: 1px solid rgba(2,6,23,0.06);                                              /* Borde gris claro */
+  border-radius: 6px;                                                               /* Bordes redondeados */
+  padding: 6px;                                                                     /* Espacio interno */
+}
+
+.remove-btn {
+  background: transparent;                                                          /* Sin fondo */
+  border: 0;                                                                        /* Sin borde */
+  color: #b91c1c;                                                                   /* Rojo para eliminar */
+  cursor: pointer;                                                                  /* Cursor para clickear */
+}
+
+
+/* CHAT - Widget de chat flotante */
+.chat-widget {
+  position: fixed;                                                                  /* Fijo en pantalla */
+  right: 24px;                                                                      /* A 24px del borde derecho */
+  bottom: 24px;                                                                     /* A 24px del borde inferior */
+  width: 300px;                                                                     /* Ancho chat */
+  max-width: calc(100% - 48px);                                                     /* Responsive: deja margen */
+  background: var(--card);                                                          /* Fondo blanco */
+  border-radius: 12px;                                                              /* Bordes redondeados */
+  box-shadow: 0 12px 40px rgba(2,6,23,0.12);                                        /* Sombra pronunciada */
+  overflow: hidden;                                                                 /* Oculta bordes internos */
+  display: none;                                                                    /* Oculto por defecto */
+  flex-direction: column;                                                           /* Contenido apilado */
+  border: 1px solid rgba(2,6,23,0.04);                                              /* Borde gris muy claro */
+}
+
+.chat-header {
+  display: flex;                                                                    /* Título y botón cerrar */
+  align-items: center;                                                              /* Verticalmente centrados */
+  justify-content: space-between;                                                   /* A los extremos */
+  padding: 10px 12px;                                                               /* Espacio interno */
+  border-bottom: 1px solid rgba(2,6,23,0.04);                                       /* Separador */
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));              /* Gradiente turquesa-azul */
+  color: white;                                                                     /* Texto blanco */
+}
+
+.chat-body {
+  padding: 12px;                                                                    /* Espacio interno */
+  max-height: 240px;                                                                /* Alto máximo */
+  overflow: auto;                                                                   /* Scroll si hay más mensajes */
+}
+
+.chat-message {
+  background: rgba(2,6,23,0.02);                                                    /* Fondo gris claro */
+  padding: 8px;                                                                     /* Espacio interno */
+  border-radius: 8px;                                                               /* Bordes redondeados */
+  margin-bottom: 8px;                                                               /* Espacio entre mensajes */
+}
+
+.chat-message.user {
+  background: rgba(37,99,235,0.08);                                                 /* Fondo azul claro para usuario */
+  align-self: flex-end;                                                             /* A la derecha */
+}
+
+.chat-note { 
+  color: var(--muted);                                                              /* Gris para nota */
+  margin-top: 6px;                                                                  /* Espacio arriba */
+}
+
+.chat-input {
+  display: flex;                                                                    /* Input y botón en fila */
+  padding: 10px;                                                                    /* Espacio interno */
+  border-top: 1px solid rgba(2,6,23,0.04);                                          /* Separador */
+  gap: 8px;                                                                         /* Espacio entre elementos */
+}
+
+.chat-input input { 
+  flex: 1;                                                                          /* Ocupa espacio disponible */
+}
+
+.chat-close {
+  background: transparent;                                                          /* Sin fondo */
+  border: 0;                                                                        /* Sin borde */
+  color: white;                                                                     /* Color blanco */
+  font-size: 18px;                                                                  /* Icono grande */
+  cursor: pointer;                                                                  /* Cursor para clickear */
+}
+
+#chat-toggle {
+  border-radius: 999px;                                                             /* Totalmente redondeado */
+  padding: 8px 12px;                                                                /* Espacio interno */
+}
+
+
+/* RESPONSIVE - Media Queries para adaptarse a diferentes pantallas */
+
+/* *** TABLETS Y MÓVILES GRANDES (900px max) *** */
+@media (max-width: 900px) {
+
+  #menu-toggle {
+    display: block;                                                                 /* Muestra icono hamburguesa */
+  }
+
+  .nav {
+    display: none;                                                                  /* Menú oculto por defecto */
+    flex-direction: column;                                                         /* Links apilados */
+    background: white;                                                              /* Fondo blanco */
+    position: absolute;                                                             /* Flotante */
+    right: 20px;                                                                    /* A 20px de la derecha */
+    top: 70px;                                                                      /* Debajo del header */
+    padding: 12px;                                                                  /* Espacio interno */
+    border-radius: 12px;                                                            /* Bordes redondeados */
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);                                        /* Sombra */
+  }
+
+  .container {
+    margin: 20px auto;                                                              /* Margen reducido */
+    padding: 20px;                                                                  /* Padding reducido */
+  }
+
+  .header-inner {
+    padding: 16px 20px;                                                             /* Padding reducido */
+  }
+
+  .hero {
+    flex-direction: column;                                                         /* Imagen debajo del texto */
+    text-align: center;                                                             /* Centrado */
+  }
+
+  .hero-img {
+    max-width: 280px;                                                               /* Imagen más pequeña */
+  }
+
+  .grid-two {
+    grid-template-columns: 1fr;                                                     /* Una columna */
+  }
+
+  .right {
+    display: none;                                                                  /* Oculta sidebar */
+  }
+
+  .features {
+    grid-template-columns: 1fr;                                                     /* Features en una columna */
+  }
+}
+
+/* *** MÓVILES MEDIANOS (600px max) *** */
+@media (max-width: 600px) {
+
+  .nav {
+    display: none;                                                                  /* Menú oculto siempre */
+  }
+
+  .container { 
+    margin: 12px;                                                                   /* Margen muy pequeño */
+    padding: 16px;                                                                  /* Padding pequeño */
+  }
+
+  .h1 { 
+    font-size: 22px;                                                                /* Título más pequeño */
+  }
+
+  .lead { 
+    font-size: 14px;                                                                /* Subtítulo más pequeño */
+  }
+
+  .btn {
+    width: 100%;                                                                    /* Botones a ancho completo */
+    text-align: center;                                                             /* Centrado */
+  }
+
+  .cta { 
+    flex-direction: column;                                                         /* Botones apilados */
+  }
+
+  .badge { 
+    font-size: 12px;                                                                /* Badge más pequeño */
+  }
+
+  .hero-img { 
+    max-width: 220px;                                                               /* Imagen aún más pequeña */
+  }
+
+  .footer {
+    flex-direction: column;                                                         /* Footer apilado */
+    gap: 4px;                                                                       /* Espacio mínimo */
+    text-align: center;                                                             /* Centrado */
+  }
+
+  .testimonial { 
+    padding: 14px;                                                                  /* Padding reducido */
+  }
+}
+
+/* *** MÓVILES MUY PEQUEÑOS (400px max) *** */
+@media (max-width: 400px) {
+  .h1 { 
+    font-size: 19px;                                                                /* Título aún más pequeño */
+  }
+
+  .feature { 
+    padding: 10px;                                                                  /* Padding mínimo */
+  }
+
+  .btn { 
+    padding: 10px 14px;                                                             /* Padding reducido */
+  }
+}
