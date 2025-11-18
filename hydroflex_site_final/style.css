@@ -520,7 +520,6 @@ label {
     display: block;
   }
 
-  /* (CAMBIO 2) permitir menú hamburguesa en tablet */
   .nav {
     display: none;
     flex-direction: column;
@@ -564,7 +563,6 @@ label {
   }
 }
 
-/* 2) Menos de 600px */
 @media (max-width: 600px) {
 
   .nav {
@@ -596,9 +594,9 @@ label {
   .testimonial { padding: 14px; }
 }
 
-/* 3) Móviles muy pequeños */
 @media (max-width: 400px) {
   .h1 { font-size: 19px; }
   .feature { padding: 10px; }
   .btn { padding: 10px 14px; }
 }
+
